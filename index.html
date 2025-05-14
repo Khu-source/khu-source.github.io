@@ -9,60 +9,101 @@
 <body>
     <div class="left-panel">
         <h1>Khushmeet Kaur</h1>
+            
         <h3>Mechatronics Engineer</h3>
+
+        <a href="https://www.linkedin.com/in/khushmeetkaur/" target="_blank">LinkedIn | </a>
+        <a href="https://github.com/Khu-source" target="_blank">GitHub | </a>
+        <a href="#">Website</a>
+
         <p>Passionate about automation, machine learning, and hardware design.</p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/khushmeetkaur/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/Khu-source" target="_blank">GitHub</a></li>
-            <li><a href="#">Personal Website</a></li>
-        </ul>
+
     </div>
-    
+
     <div class="right-panel">
         <section id="resume">
             <h2>Resume</h2>
-            <h3>Experience</h3>
-            <ul>
-                <li><strong>Maintenance Supply Chain – PepsiCo</strong><br>
-                Led a capital project saving $1.8M, implemented preventive maintenance, and designed security layouts in AutoCAD.</li>
+            <div class="timeline">
+          
+              <div class="timeline-item">
+                <span class="date">Jan 2025 – Apr 2025</span>
+                <div class="details">
+                  <h3>PepsiCo – Maintenance Supply Chain</h3>
+                  <ul>
+                    <li>Led a capital project upgrading a twin screw mixing assembly, improving throughput by 30% and saving $1.8M projected over 5 years.</li>
+                    <li>Implemented preventive maintenance via Avantis, reducing downtime and enhancing asset reliability.</li>
+                    <li>Created AutoCAD layouts for security systems, wiring card readers and cameras to panels across the plant.</li>
+                  </ul>
+                </div>
+              </div>
+          
+              <div class="timeline-item">
+                <span class="date">May 2024 – Aug 2024</span>
+                <div class="details">
+                  <h3>University of Waterloo – Circuits Teaching Assistant</h3>
+                  <ul>
+                    <li>Supported students and faculty in labs and academic review sessions.</li>
+                    <li>Analyzed DC to complex AC circuits; explained circuit design and use of DMMs, oscilloscopes, and signal generators.</li>
+                    <li>Designed and simulated schematics with Altium and Falstad.</li>
+                  </ul>
+                </div>
+              </div>
+          
+              <div class="timeline-item">
+                <span class="date">Sept 2023 – Dec 2023</span>
+                <div class="details">
+                  <h3>A. Berger Precision – Engineering Analyst</h3>
+                  <ul>
+                    <li>Modeled precision parts using SolidWorks, including GD&T and process prints.</li>
+                    <li>Defined and automated inspection for parts with 6-micron tolerances.</li>
+                    <li>Enhanced production efficiency by 52%, using ClickUp for project tracking and dashboards.</li>
+                  </ul>
+                </div>
+              </div>
+          
+              <div class="timeline-item">
+                <span class="date">Jan 2023 – Apr 2023</span>
+                <div class="details">
+                  <h3>Linamar iHub – Manufacturing Engineer</h3>
+                  <ul>
+                    <li>Modeled a prototype inverter and busbar in SolidWorks, validated via 3D metal printing.</li>
+                    <li>Revised layouts in AutoCAD to improve spatial efficiency.</li>
+                    <li>Planned cleanroom manufacturing for microelectronics aligned with ISO-7 standards.</li>
+                  </ul>
+                </div>
+              </div>
+          
+              <div class="timeline-item">
+                <span class="date">Sept 2022 – May 2027</span>
+                <div class="details">
+                  <h3>University of Waterloo – Mechatronics Engineering</h3>
+                  <p>Relevant Courses: RTOS, Engineering Design, Data Structures and Algorithms</p>
+                </div>
+              </div>
+          
+            </div>
+          </section>
+          
 
-                <li><strong>Circuits TA – University of Waterloo</strong><br>
-                Assisted students, demonstrated advanced circuit concepts, and conducted schematic simulations using Altium and Falstad.</li>
-
-                <li><strong>Engineering Analyst – A. Berger Precision</strong><br>
-                Modeled precision parts in SolidWorks, automated inspections, and improved production efficiency by 52%.</li>
-
-                <li><strong>Manufacturing Engineer – Linamar iHub</strong><br>
-                Designed inverter prototypes, optimized layouts, and developed ISO-7 cleanroom processes.</li>
-            </ul>
-
-            <h3>Education</h3>
-            <p><strong>University of Waterloo</strong><br>
-            BASc in Mechatronics Engineering (2022–2027)<br>
-            Relevant Courses: RTOS, Engineering Design, Data Structures and Algorithms</p>
-        </section>
-        
         <section id="projects">
             <h2>Projects</h2>
-
-            <article>
-                <h3>Electric Skateboard – Electrium</h3>
-                <p>Designed a 10S2P battery pack, laser-cut a custom deck, and integrated SolidWorks, welding, and soldering techniques.</p>
-            </article>
-
-            <article>
-                <h3>CapyCare 2 – Design Competition</h3>
-                <p>Created a medical documentation tool for visually impaired users using SQL, HTML/CSS, Node.js, and React.
-                <br><a href="https://github.com/Khu-source/CapyCare/tree/main" target="_blank">GitHub Repo</a></p>
-            </article>
-
-            <article>
-                <h3>Custom Real-Time Operating System (RTOS 2)</h3>
-                <p>Built an OS with Round Robin scheduling, preemption, UART commands, and multithreading in C on STM32.
-                <br><a href="https://github.com/Khu-source/RTOS" target="_blank">GitHub Repo</a></p>
-            </article>
+            <div class="project-grid">
+                
+                <div class="project-tile" onclick="window.open('https://github.com/Khu-source/CapyCare/tree/main')">
+                    <h3>CapyCare 2</h3>
+                    <p>Accessible medical documentation tool built with SQL, HTML/CSS, Node.js, and React.</p>
+                </div>
+                <div class="project-tile" onclick="window.open('https://github.com/Khu-source/RTOS')">
+                    <h3>Custom RTOS</h3>
+                    <p>Built a real-time OS with preemption, UART, and assembly for multithreading on STM32 (C).</p>
+                </div>
+                <div class="project-tile">
+                    <h3>Electric Skateboard</h3>
+                    <p>Designed a 10S2P battery pack, custom wooden deck, and integrated electronics using welding and soldering.</p>
+                </div>
+            </div>
         </section>
-        
+
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:k6kaur@uwaterloo.ca">k6kaur@uwaterloo.ca</a></p>

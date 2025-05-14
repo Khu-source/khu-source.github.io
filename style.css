@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
-
+/* Color Palette */
 :root {
     --rich-black: #01161e;
     --reseda-green: #667761;
@@ -8,15 +7,80 @@
     --rosy-brown: #b79492;
 }
 
+/* Typing Animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Gradient effect on the left edge of the right panel */
+.right-panel {
+    margin-left: 25%;
+    width: 50%;
+    padding: 10px;
+    background-color: var(--beige);
+    color: var(--reseda-green);
+    overflow-y: auto;
+    box-sizing: border-box;
+    position: relative;
+    background: linear-gradient(to left, var(--beige) 99%, rgba(102, 119, 97, 0.6) 100%);
+    /* 
+    --beige is the solid background color, the gradient will start from that 
+    and move to the reseda-green color but at a reduced opacity (0.6) over 20px.
+    */
+}
+
+
+h1 {
+    display: inline-block;  /* Allow the text to be animated */
+    overflow: hidden;       /* Hide the overflow so it looks like it's typing */
+    white-space: nowrap;    /* Keep the text in a single line */
+    border-right: 3px solid var(--cinereous); /* Simulate the cursor */
+    width: 0;
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+.project-tile {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--cinereous);
+    border-radius: 8px;
+    height: 250px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; /* content at the bottom */
+    color: var(--beige);
+}
+
+.project-tile .tile-content {
+    width: 100%;
+    padding: 16px;
+    background: rgba(1, 22, 30, 0.6); /* a dark semi-transparent overlay */
+    box-sizing: border-box;
+}
+
+
+/* Cursor blink effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
 body {
     display: flex;
     margin: 0;
     height: 100vh;
     font-family: 'Source Code Pro', monospace;
-    background-color: var(--beige);
+    background: linear-gradient(135deg, var(--reseda-green), var(--beige)); /* Gradient with Reseda Green */
     color: var(--rich-black);
-    position: relative;
-    overflow: hidden;
 }
 
 .left-panel {
@@ -37,55 +101,115 @@ body {
     color: var(--rich-black);
     overflow-y: auto;
     box-sizing: border-box;
+    border-radius: 10px; /* Rounded corners for the right panel */
 }
 
-.left-panel h1 {
-    font-size: 2em;
+h2 {
+    color: var(--cinereous);
+}
+
+a {
     color: var(--rich-black);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--cinereous);
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--cinereous);
+    border-radius: 50%;
+    border: 3px solid var(--beige);
+    z-index: 1;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    width: 3px;
+    background-color: var(--cinereous);
+    z-index: 0;
+}
+
+.timeline-item .date {
+    margin-left: 30px;
+    min-width: 140px;
+    font-size: 0.85em;
+    color: var(--reseda-green);
+    padding-top: 2px;
+}
+
+.timeline-item .details {
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Project tiles */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Add this rule to ensure padding is included in the total size */
+* {
+    box-sizing: border-box;
+}
+
+/* Add padding to the .tile-content instead */
+.project-tile {
+    border: 1px solid var(--cinereous);
+    border-radius: 12px; /* More rounded edges */
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid var(--cinereous);
-    animation: typing 3s steps(12, end) infinite alternate, blink 0.7s steps(2, start) infinite;
-    display: inline-block;
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+/* Padding for the inner content */
+.project-tile .tile-content {
+    padding: 20px; /* Adjust padding here */
+    flex-grow: 1;
 }
 
-@keyframes blink {
-    50% { border-color: transparent; }
+.project-tile:hover {
+    transform: translateY(-8px); /* Slight lift on hover */
+    background-color: var(--rosy-brown);
+    color: var(--beige);
 }
 
-.left-panel ul {
-    list-style-type: none;
-    padding: 0;
-}
 
-.left-panel ul li a {
-    color: var(--rich-black);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-.left-panel ul li a:hover {
-    color: var(--cinereous);
-}
-
-.right-panel h2 {
-    color: var(--cinereous);
-}
-
-.right-panel a {
-    color: var(--rich-black);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-.right-panel a:hover {
-    color: var(--cinereous);
+.project-tile:hover a {
+    color: var(--beige);
 }
