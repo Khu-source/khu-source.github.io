@@ -62,7 +62,7 @@ h1 {
 .project-tile .tile-content {
     width: 100%;
     padding: 16px;
-    background: rgba(1, 22, 30, 0.6); /* a dark semi-transparent overlay */
+    background:var(--beige); /* a dark semi-transparent overlay */
     box-sizing: border-box;
 }
 
